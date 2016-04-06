@@ -19,15 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(rootViewController: controller)
         navigationController.tabBarItem = UITabBarItem(title: "j.m.", image: UIImage(named: "avatar"), tag: 0)
 
-        let anotherController = AnotherViewController()
-        let anotherNavigationController = UINavigationController(rootViewController: anotherController)
-        anotherNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .TopRated, tag: 0)
+//        let anotherController = AnotherViewController()
+//        let anotherNavigationController = UINavigationController(rootViewController: anotherController)
+//        anotherNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .TopRated, tag: 0)
 
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navigationController, anotherNavigationController]
+//        let tabBarController = UITabBarController()
+//        tabBarController.viewControllers = [navigationController, anotherNavigationController]
+
+        let splitController = UISplitViewController()
+        splitController.viewControllers = [navigationController]
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = tabBarController
+        window?.rootViewController = splitController
         window?.makeKeyAndVisible()
 
         return true
