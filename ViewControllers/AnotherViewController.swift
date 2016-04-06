@@ -10,6 +10,22 @@ import UIKit
 
 class AnotherViewController: UIViewController {
 
+    weak var pushButton: UIButton!
+
+    override func loadView() {
+        super.loadView()
+
+        view.backgroundColor = .greenColor()
+
+        let pushButton = UIButton()
+        pushButton.setTitle("Push ViewController", forState: .Normal)
+        view.addSubview(pushButton)
+        pushButton.snp_makeConstraints { make in
+            make.center.equalTo(0)
+        }
+        self.pushButton = pushButton
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +33,11 @@ class AnotherViewController: UIViewController {
 //        self.title = "AnotherViewController blabla"
 //        self.title = "AnotherViewController with a very long title"
 
-        view.backgroundColor = .greenColor()
+        self.pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), forControlEvents: .TouchUpInside)
+    }
+
+    func pushButtonTapped(sender: UIButton) {
+        self.navigationController?.pushViewController(ViewController(), animated: true)
     }
 
     override func viewWillAppear(animated: Bool) {

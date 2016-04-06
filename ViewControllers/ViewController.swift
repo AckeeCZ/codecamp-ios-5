@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .redColor()
 
         let pushButton = UIButton()
-        pushButton.setTitle("Push next controller", forState: .Normal)
+        pushButton.setTitle("Push AnotherViewController", forState: .Normal)
         view.addSubview(pushButton)
         pushButton.snp_makeConstraints { make in
             make.center.equalTo(0)
@@ -65,5 +65,11 @@ class ViewController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         print("ViewController did disappear.")
+    }
+
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+//        print(previousTraitCollection)
+//        print("\n")
+//        print(self.traitCollection)
     }
 }

@@ -16,10 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         let controller = ViewController()
-        // let navigationController = UINavigationController(rootViewController: controller)
+        let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.tabBarItem = UITabBarItem(title: "j.m.", image: UIImage(named: "avatar"), tag: 0)
+
+        let anotherController = AnotherViewController()
+        let anotherNavigationController = UINavigationController(rootViewController: anotherController)
+        anotherNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .TopRated, tag: 0)
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationController, anotherNavigationController]
 
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = controller
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
 
         return true
