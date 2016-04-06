@@ -14,6 +14,7 @@
 		170EDF031CB55844007128D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170EDF021CB55844007128D0 /* Assets.xcassets */; };
 		170EDF061CB55844007128D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170EDF041CB55844007128D0 /* LaunchScreen.storyboard */; };
 		170EDF0E1CB5604E007128D0 /* AnotherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170EDF0D1CB5604E007128D0 /* AnotherViewController.swift */; };
+		170EDF101CB56B8C007128D0 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170EDF0F1CB56B8C007128D0 /* ModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		170EDF051CB55844007128D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170EDF071CB55844007128D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		170EDF0D1CB5604E007128D0 /* AnotherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherViewController.swift; sourceTree = "<group>"; };
+		170EDF0F1CB56B8C007128D0 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		36FADD4CCB13C248D149DDD5 /* Pods-ViewControllers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewControllers.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViewControllers/Pods-ViewControllers.release.xcconfig"; sourceTree = "<group>"; };
 		5C195E99CDD6A20419C9DFB9 /* Pods-ViewControllers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViewControllers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViewControllers/Pods-ViewControllers.debug.xcconfig"; sourceTree = "<group>"; };
 		9414B6C2D214AEBFA782EFCF /* Pods_ViewControllers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViewControllers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 				170EDEFB1CB55844007128D0 /* AppDelegate.swift */,
 				170EDEFD1CB55844007128D0 /* ViewController.swift */,
 				170EDF0D1CB5604E007128D0 /* AnotherViewController.swift */,
+				170EDF0F1CB56B8C007128D0 /* ModalViewController.swift */,
 				170EDEFF1CB55844007128D0 /* Main.storyboard */,
 				170EDF021CB55844007128D0 /* Assets.xcassets */,
 				170EDF041CB55844007128D0 /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170EDF101CB56B8C007128D0 /* ModalViewController.swift in Sources */,
 				170EDEFE1CB55844007128D0 /* ViewController.swift in Sources */,
 				170EDEFC1CB55844007128D0 /* AppDelegate.swift in Sources */,
 				170EDF0E1CB5604E007128D0 /* AnotherViewController.swift in Sources */,

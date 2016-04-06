@@ -10,20 +10,20 @@ import UIKit
 
 class AnotherViewController: UIViewController {
 
-    weak var pushButton: UIButton!
+    weak var presentButton: UIButton!
 
     override func loadView() {
         super.loadView()
 
         view.backgroundColor = .greenColor()
 
-        let pushButton = UIButton()
-        pushButton.setTitle("Push ViewController", forState: .Normal)
-        view.addSubview(pushButton)
-        pushButton.snp_makeConstraints { make in
+        let presentButton = UIButton()
+        presentButton.setTitle("Present ModalViewController", forState: .Normal)
+        view.addSubview(presentButton)
+        presentButton.snp_makeConstraints { make in
             make.center.equalTo(0)
         }
-        self.pushButton = pushButton
+        self.presentButton = presentButton
     }
 
     override func viewDidLoad() {
@@ -33,11 +33,16 @@ class AnotherViewController: UIViewController {
 //        self.title = "AnotherViewController blabla"
 //        self.title = "AnotherViewController with a very long title"
 
-        self.pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        self.presentButton.addTarget(self, action: #selector(presentButtonTapped(_:)), forControlEvents: .TouchUpInside)
     }
 
-    func pushButtonTapped(sender: UIButton) {
-        self.navigationController?.pushViewController(ViewController(), animated: true)
+    func presentButtonTapped(sender: UIButton) {
+        let controller = ModalViewController()
+//        controller.modalTransitionStyle = .PartialCurl
+//        controller.modalPresentationStyle = .Popover
+//        controller.popoverPresentationController?.sourceView = sender
+
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 
     override func viewWillAppear(animated: Bool) {
