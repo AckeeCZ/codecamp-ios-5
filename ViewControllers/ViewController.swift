@@ -7,17 +7,55 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
+    weak var pushButton: UIButton!
+    
+    override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = .red
+        
+        let pushButton = UIButton()
+        pushButton.setTitle("Push next controller", for: .normal)
+        view.addSubview(pushButton)
+        pushButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        self.pushButton = pushButton
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        title = "ViewController"
+        pushButton.addTarget(self, action: #selector(pushButtonTapped(sender:)), for: .touchUpInside)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func pushButtonTapped(sender: UIButton) {
+        self.navigationController?.pushViewController(AnotherViewController(), animated: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewController will appear.")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("ViewController did appear.")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController will disappear.")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("ViewController did disappear.")
     }
 
 
