@@ -35,7 +35,8 @@ class ViewController: UIViewController {
     }
 
     func pushButtonTapped(sender: UIButton) {
-        self.navigationController?.pushViewController(AnotherViewController(), animated: true)
+//        self.navigationController?.pushViewController(AnotherViewController(), animated: true)
+        splitViewController?.showDetailViewController(AnotherViewController(), sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
