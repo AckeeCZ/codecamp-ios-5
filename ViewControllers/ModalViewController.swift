@@ -42,13 +42,19 @@ class ModalViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Default Style", message: "A standard alert.", preferredStyle: .alert)
         
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Blabla"
+        }
+
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("cancel")
         }
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            print("ok")
+            let textField = alertController.textFields![0] as UITextField
+            print(textField.text)
         }
         alertController.addAction(OKAction)
         
