@@ -18,9 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let controller = ViewController()
         let navigationController = UINavigationController(rootViewController: controller)
+        navigationController.tabBarItem = UITabBarItem(title: "j.m.", image: UIImage(named: "avatar"), tag: 0)
+        
+        let anotherController = AnotherViewController()
+        let anotherNavigationController = UINavigationController(rootViewController: anotherController)
+        anotherNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationController, anotherNavigationController]
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         
         return true

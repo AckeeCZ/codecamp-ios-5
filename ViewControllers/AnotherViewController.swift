@@ -10,6 +10,22 @@ import UIKit
 
 class AnotherViewController: UIViewController {
 
+    weak var pushButton: UIButton!
+
+    override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = .green
+        
+        let pushButton = UIButton()
+        pushButton.setTitle("Push ViewController", for: .normal)
+        view.addSubview(pushButton)
+        pushButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        self.pushButton = pushButton
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,12 +33,11 @@ class AnotherViewController: UIViewController {
 //        title = "AnotherViewController blabla"
 //        title = "AnotherViewController with a very long title"
         
-        view.backgroundColor = .green
+        pushButton.addTarget(self, action: #selector(pushButtonTapped(_:)), for: .touchUpInside)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func pushButtonTapped(_ sender: UIButton) {
+        self.navigationController?.pushViewController(ViewController(), animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
